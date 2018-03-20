@@ -1,4 +1,4 @@
-ï»¿import java.io.File;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
@@ -12,11 +12,11 @@ public class Main {
 
     private static boolean evoe(ArrayList<String> strArr){
         String str = ele.getOperations();
-        boolean flag = true;//åˆ¤æ–­è¿‡ç¨‹ä¸­æ˜¯å¦æœ‰è´Ÿæ•°æˆ–å°æ•°ç‚¹
-        int temp=0;//å­˜æ”¾ä¸´æ—¶è®¡ç®—ç»“æœ
+        boolean flag = true;//ÅĞ¶Ï¹ı³ÌÖĞÊÇ·ñÓĞ¸ºÊı»òĞ¡Êıµã
+        int temp=0;//´æ·ÅÁÙÊ±¼ÆËã½á¹û
         Stack<String> stack = new Stack<String>();
         for(String s : strArr){
-            if(!str.contains(s)){//å¦‚æœæ˜¯æ•°å­—,æ”¾å…¥æ ˆä¸­
+            if(!str.contains(s)){//Èç¹ûÊÇÊı×Ö,·ÅÈëÕ»ÖĞ
                 stack.push(s);
             }else{
                 int a = Integer.valueOf(stack.pop());
@@ -54,7 +54,7 @@ public class Main {
         String ea,eb;
         Stack<String> expstack = new Stack<String>();
         for(String s : strArr){
-            if(!str.contains(s)){//å¦‚æœæ˜¯æ•°å­—,æ”¾å…¥æ ˆä¸­
+            if(!str.contains(s)){//Èç¹ûÊÇÊı×Ö,·ÅÈëÕ»ÖĞ
                 expstack.push(s);
             }else{
                 ea = expstack.pop();
@@ -100,9 +100,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //æœ€ç»ˆè¾“å…¥çš„ç»“æœ
+        //×îÖÕÊäÈëµÄ½á¹û
         String result="201571030141\r\n";
-        //è¿è¡Œæ—¶ä¸è¾“å…¥é¢˜ç›®ä¸ªæ•°ï¼Œé»˜è®¤ä¸º5
+        //ÔËĞĞÊ±²»ÊäÈëÌâÄ¿¸öÊı£¬Ä¬ÈÏÎª5
         String x="";
         if(args.length==0) x = "5";
         else x=args[0];
@@ -119,7 +119,7 @@ public class Main {
             }
             if(flage==1) b=false;
             else {
-                System.out.println("è¯·æ­£ç¡®è¾“å…¥é¢˜ç›®çš„æ•°é‡ï¼š");
+                System.out.println("ÇëÕıÈ·ÊäÈëÌâÄ¿µÄÊıÁ¿£º");
                 x = in.nextLine();
             }
         }
