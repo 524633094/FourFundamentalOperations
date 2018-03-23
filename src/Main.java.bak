@@ -148,7 +148,7 @@ public class Main {
                 continue;
             }
             k++;
-            System.out.println(ele.getExp()+"="+ele.getResult());
+            System.out.println(ele.getExp()+"="ele.getResult());
             //System.out.println(ele.getResult());
             //if(ele.getExp().contains("(")||ele.getExp().contains(")"))
             //	result += ele.getExp()+"= "+ele.getResult()+" 2"+"\r\n";
