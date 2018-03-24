@@ -1,20 +1,19 @@
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.*;
 
-
 public class Main {
 
     static int N =20;
     static element ele = new element();
+
     //计算逆波兰式的结果
     private static boolean evoe(ArrayList<String> strArr){
         String str = ele.getOperations();
         boolean flag = true;//判断过程中是否有负数或小数点
-        int temp=0;//存放临时计算结果
+        int temp = 0;//存放临时计算结果
         Stack<String> stack = new Stack<String>();
         for(String s : strArr){
             if(!str.contains(s)){//如果是数字,放入栈中
@@ -29,16 +28,16 @@ public class Main {
                             break;
                         case "-" :
                             temp = b-a;
-                            if(temp<0) flag=false;
+                            if(temp < 0) flag=false;
                             stack.push(String.valueOf(temp));
                             break ;
                         case "*" :
                             stack.push(String.valueOf(a*b));
                             break;
                         case "/" :
-                            if(a==0) {a=1;flag=false;}
+                            if(a == 0) {a = 1;flag = false;}
                             temp = b/a;
-                            if(a*temp != b) flag=false;
+                            if(a*temp != b) flag = false;
                             stack.push(String.valueOf(temp));
                             break ;
                     }
@@ -53,7 +52,7 @@ public class Main {
     private static void pro_exp(ArrayList<String> strArr){
         String str = ele.getOperations();
         String ea,eb;
-        String fh=" ";//临时的符号
+        String fh = " ";//临时的符号
         boolean lastisnum = false;//记录临时符号后的一位是否为数字
         Stack<String> expstack = new Stack<String>();
         for(String s : strArr){
@@ -115,29 +114,29 @@ public class Main {
     public static void main(String[] args) {
 
         //最终输入的结果
-        String result="201571030141\r\n";
+        String result = "201571030141\r\n";
         //运行时不输入题目个数，默认为5
-        String x="";
-        if(args.length==0) x = "5";
-        else x=args[0];
+        String x = "";
+        if(args.length == 0) x = "5";
+        else x = args[0];
 
         Scanner in = new Scanner(System.in);
 
-        boolean b=true;
+        boolean b = true;
         while(b){
-            int flage=1;
-            for (int i = x.length();--i>=0;){
+            int flage = 1;
+            for (int i = x.length();--i >= 0;){
                 if (!Character.isDigit(x.trim().charAt(i))){
-                    flage=0;
+                    flage = 0;
                 }
             }
-            if(flage==1) b=false;
+            if(flage == 1) b = false;
             else {
                 System.out.println("请正确输入题目的数量：");
                 x = in.nextLine();
             }
         }
-        int k=0;
+        int k = 0;
         while (k < Integer.parseInt(x)) {
             test();
             pro_exp(ele.getStrArr());
